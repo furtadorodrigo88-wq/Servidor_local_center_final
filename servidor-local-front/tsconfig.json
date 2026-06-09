@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "ES2017",
     "baseUrl": ".",
-    "rootDir": "./",
+    "rootDir": "./servidor-local-front",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
