@@ -26,7 +26,7 @@ app.use(express.json()); // para interpretar o corpo das requisições como JSON
 app.use(cors({
     origin: ["http://localhost:3000", "https://servidor-local-center-backend-w1rr.onrender.com", "https://servidor-local-center-final.vercel.app", "https://dev-exame-final.vercel.app", "https://servidor-local-center-final.onrender.com"],
     credentials: true,
-    allowedHeaders: ["*", "Content-Type", "Authorization"],
+    allowedHeaders: ["*"],
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
 }));
 
