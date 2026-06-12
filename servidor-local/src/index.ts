@@ -26,10 +26,9 @@ app.use(express.json()); // para interpretar o corpo das requisições como JSON
 app.use(cors({
     origin: ["http://localhost:3000", "https://servidor-local-center-backend-w1rr.onrender.com", "https://servidor-local-center-final.vercel.app", "https://dev-exame-final.vercel.app", "https://servidor-local-center-final.onrender.com"],
     credentials: true,
-    allowedHeaders: ["*"],
+    allowedHeaders: ["Content-Type", "Authorization"],
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
 }));
-
 
 // rota inicial do express
 app.get("/", (req: Request, res: Response) => {
@@ -90,4 +89,3 @@ const sslOptions = {
         console.log(`Servidor rodando em https://localhost:${PORT}`);
     });
 }
-
