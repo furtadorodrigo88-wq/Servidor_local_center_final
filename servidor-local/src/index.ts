@@ -16,6 +16,7 @@ import swaggerUi from "swagger-ui-express"
 import { ApolloServer } from "@apollo/server";
 import { resolvers, typeDefs } from "./graphql/index.js";
 import { expressMiddleware } from "@as-integrations/express5";
+import { initDatabase } from "./lib/init-db.js";
 
 const app = express();
 
@@ -26,6 +27,7 @@ app.use(cors({
     origin: ["http://localhost:3000", "https://servidor-local-center-backend-w1rr.onrender.com", "https://servidor-local-center-final.vercel.app", "https://dev-exame-final.vercel.app", "https://servidor-local-center-final.onrender.com"],
     credentials: true,
     allowedHeaders: ["*"],
+    methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
 }));
 
 
@@ -67,6 +69,9 @@ app.use("/graphql", expressMiddleware(graphqlServer, {
         DB_NAME: process.env.DB_NAME,
     }),
 }))
+
+// Criar tabelas nabase de dados se nao existirem
+await initDatabase();
 
 const PORT = process.env.PORT ?? 8080;
 if (process.env.NODE_ENV === "development") {
