@@ -24,7 +24,7 @@ app.use(express.json()); // para interpretar o corpo das requisições como JSON
 
 // liberta o front-end de aceder ao back-end
 app.use(cors({
-    origin: ["http://localhost:3000", "https://servidor-local-center-backend-w1rr.onrender.com", "https://servidor-local-center-final.vercel.app", "https://dev-exame-final.vercel.app", "https://servidor-local-center-final.onrender.com"],
+    origin: ["http://localhost:3000", "https://servidor-local-center-backend-w1rr.onrender.com", "https://servidor-local-center-final.vercel.app", "https://dev-exame-final.vercel.app", "https://servidor-local-center-final.onrender.com", "https://servidor-local-center-final-git-main-wilsoncv.vercel.app/"],
     credentials: true,
     allowedHeaders: ["*", "Content-Type", "Authorization"],
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
