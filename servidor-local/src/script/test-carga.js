@@ -7,7 +7,7 @@ const options = {
 }
 
 export default function (){
-    const url = 'https://servidor-local-center-backend-w1rr.onrender.com'
+    const url = 'https://servidor-local-center-final.onrender.com'
 
     const payload = JSON.stringify({
         email: "wilson@gmail.com",
