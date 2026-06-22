@@ -17,6 +17,9 @@ import { ApolloServer } from "@apollo/server";
 import { resolvers, typeDefs } from "./graphql/index.js";
 import { expressMiddleware } from "@as-integrations/express5";
 import { initDatabase } from "./lib/init-db.js";
+import morgan from "morgan"
+import statusMonitor from "express-status-monitor"
+
 
 const app = express();
 
@@ -29,6 +32,9 @@ app.use(cors({
     allowedHeaders: ["*"],
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
 }));
+
+app.use(morgan("dev"));
+app.use(statusMonitor())
 
 // rota inicial do express
 app.get("/", (req: Request, res: Response) => {
